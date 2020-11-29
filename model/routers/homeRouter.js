@@ -33,9 +33,9 @@ module.exports = function(start) {
     });
 
     // SUPPORT US
-    start.get('/support-us', function(request, response) {
+    start.get('/support', function(request, response) {
         let queryString = request.query;
-        response.render('support-us', {pageNavigate: queryString});
+        response.render('support', {pageNavigate: queryString});
     });
 
     // VOLUNTEER

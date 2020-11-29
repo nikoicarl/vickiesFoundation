@@ -1,0 +1,190 @@
+// USED FOR BOTH FINALIST AND SPEAKERS GRID
+section.finalist-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    margin-top: 100px;
+    ul {
+        display: block;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        flex-wrap: wrap;
+        li {
+            margin: 0;
+            padding: 0;
+            width: 50%;
+            border-right: 1px solid $c-white;
+            border-bottom: 1px solid $c-white;
+            //flex: 0 0 50%;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            @include media-breakpoint-up(lg) {
+                width: 25%;
+                //flex: 0 0 25%;
+            }
+            a {
+                display: block;
+                padding-top: 100%;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    height: 50%;
+                    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);
+                    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);
+                    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
+                    transition: height .5s ease-in-out;
+                    transform: translateZ(0);
+                }
+
+                &:hover,
+                &:focus {
+                    &:before {
+                        height: 150%;
+                    }
+                }
+            }
+            .profile-item {
+                position: absolute;
+                bottom: 0;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                color: $c-white;
+                margin-bottom: 10%;
+                padding: 0 20%;
+                &__person {
+                    color: $c-white;
+                    font-family: 'StagSansMedium';
+                    @include font-size(15);
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                    margin-bottom: 4px;
+                }
+                &__country {
+                    color: $c-white;
+                    font-family: 'StagSansBook';
+                    @include font-size(12);
+                    line-height: 1.17;
+                    letter-spacing: 1px;
+                }
+            }
+        }
+    }
+
+    // Apply to finalist grid only and NOT to speakers grid
+    &:not(.speaker-grid) {
+        ul {
+            li {
+                &:first-child,
+                &.static-item {
+                    background-color: #021d41;
+                    background-repeat: no-repeat;
+                    background-position: 27px center;
+                    a {
+                        &:before {
+                            display: none;
+                        }
+                        &.btn {
+                            border: 2px solid $c-yellow;
+                            color: $c-yellow;
+                            height: auto;
+                            font-family: 'StagSansMedium';
+                            @include font-size(12);
+                            text-transform: uppercase;
+                            padding: 8px 0 7px;
+                            width: 100%;
+                            max-width: 227px;
+                            letter-spacing: 3px;
+                            margin-bottom: 7%;
+                            transition: all .2s ease-in;
+                            @include media-breakpoint-up(md) {
+                                padding: 15px 0 14px;
+                                @include font-size(14);
+                            }
+                        }
+    
+                        &:hover,
+                        &:focus {
+                            border-color: $c-white;
+                            color: $c-white;
+                        }
+                    }
+                    .content-item {
+                        position: relative;
+                        padding: 13%;
+                        text-align: left;
+                        height: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        flex-direction: column;
+                        &__title {
+                            @include font-size(20);
+                            line-height: 1.03;
+                            letter-spacing: 3px;
+                            font-family: "StagSansThin";
+                            color: $c-white;
+                            @include media-breakpoint-up(sm) {
+                                @include font-size(31);
+                            }
+                            @include media-breakpoint-up(md) {
+                                letter-spacing: 7.2px;
+                            }
+                        }
+                        &__year {
+                            font-family: "StagSansThin";
+                            color: #f3c300;
+                            display: block;
+                            margin-top: 11px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.speaker-grid {
+        position: relative;
+        margin-top: 0;
+        li {
+            width: 50%;
+            @include media-breakpoint-up(md) {
+                width: 33.33%;
+            }
+            @include media-breakpoint-up(lg) {
+                width: 20%;
+            }
+        }
+    }
+    &.person-bio {
+        margin-top: 0;
+        li {
+            width: 50%;
+            @include media-breakpoint-up(md) {
+                width: 33.33%;
+            }
+            @include media-breakpoint-up(lg) {
+                width: 20%;
+            }
+            
+        }
+    }
+    &.stories {
+        
+        ul {
+            @include media-breakpoint-down(md) {
+                flex-direction: column;
+                li {
+                    width: 100%;
+                    background-position: 0 0;
+                }
+            }
+        }
+
+    }
+}
