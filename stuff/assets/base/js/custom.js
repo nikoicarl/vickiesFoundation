@@ -61,6 +61,7 @@ $(document).ready(function () {
                 fundraising: $("input:checkbox[name='fundraising']:checked").val(),
                 socialMedia: $("input:checkbox[name='socialMedia']:checked").val(),
                 volunteer: $("input:checkbox[name='volunteer']:checked").val(),
+                globalImageHolder: globalImageHolder
             });
         }, 500);
 
@@ -68,7 +69,7 @@ $(document).ready(function () {
         socket.on('_volunteer', (data) => {
             if (data.type == 'error') {
                 $('.vic-alert').html(`
-                    <div class=" alert alert-danger alert-dismissible fade show col-12" role="alert"> ${data.message} 
+                    <div class=" alert alert-danger  alert-dismissible fade show col-12" role="alert"> ${data.message} 
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -76,16 +77,49 @@ $(document).ready(function () {
                 `);
             } else {
                 $('.vic-alert').html(`
-                    <div  class=" alert alert-success alert-dismissible fade showcol-12" role="alert"> ${data.message} 
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                `);
-            }
+                <div class=" alert alert-success alert-dismissible fade show col-12" role="alert"> ${data.message} 
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            `);
+            globalImageHolder =[];
             $('.volunteer, .nameFirst, .nameLast, .email, .phone, .whatsapp, .addressl1, .state, .country, .gender, .age, .social_media, .job_title, .job_desc, .reason, .support, .question').val('');
             $('.occupation, .event, .fundraising, .socialMedia, .volunteer').prop('checked', false);
             $('.vic_volunteer_form_submit_btn').html('Submit Form <span class="mbrib-chat mbr-iconfont mbr-iconfont-btn"></span>');
+            }
         });
     });
+
+
+    //Display image on select
+    $('.vic_upload_image_source').change(function(event){
+        //Get image element into target variable
+        let target = document.getElementById('vic_image_upload');
+        //Initiate file reader
+        let reader = new FileReader();
+        //Read file using the targeted event to be display in the image tag
+        reader.readAsDataURL(event.target.files[0]);
+        //Load read data into the src of the image tag
+        reader.onload = function(e) {
+            target.src = this.result;
+        }
+        convertImageForUpload(event);
+    });
+
+    //Function to convert image for upload
+    let globalImageHolder = [];
+    function convertImageForUpload(event) {
+        let reader = new FileReader();
+        let slice = event.target.files[0].slice(0, event.target.files[0].size);
+        reader.readAsArrayBuffer(slice);
+        reader.onload = function() {
+            globalImageHolder.push({
+                name: event.target.files[0].name, 
+                type: event.target.files[0].type, 
+                size: event.target.files[0].size, 
+                data: reader.result 
+            });
+        }
+    }
 });

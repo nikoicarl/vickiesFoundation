@@ -3,6 +3,8 @@ const start = express();
 const md5 = require('md5');
 const partials = require('express-partials');
 const socket = require('socket.io');
+const bodyParser = require('body-parser');
+
 const path = require('path');
 
 
@@ -35,6 +37,8 @@ const volunteerFormSubmit = require('./model/controllers/volunteerFormSubmit');
 //set template engine
 start.use(partials());
 start.set('view engine', 'ejs');
+//pass all form data
+start.use(bodyParser.urlencoded({ extended: false }));
 
 //set static files folder
 start.use(express.static('./stuff'));

@@ -1,4 +1,4 @@
-<form method="POST" class="vic_volunteer_form_submit"  action="#">
+<form method="POST" class="vic_volunteer_form_submit"  action="#" enctype="multipart/form-data">
     <div class="row  container form_css">
         <div class="col-md-6">
             <div class="form-group mt-2">
@@ -175,9 +175,14 @@
             </div>
         </div>
 
-        <div class="col-md-6 mb-3">
-            <label for='uploadfile'>Upload Image:</label>
-            <input type="file" name="uploadfile" id="uploadfile">
+        <div class="col-md-6 mt-4 ">
+            <div class="gcc_event_upload_image border mb-3" style="width:140px;height:140px;">
+                <img class="vic_image_upload" id="vic_image_upload" src="" alt="" style="max-height:140px;max-width: 140px;">
+            </div>
+            <div>
+                <label for="" style="color: #655139;">Upload Image</label>
+                <input type="file"  accept="image/*" name="image" class="vic_upload_image_source" id="file" >
+            </div>
         </div>
 
         <div class="col-md-12 text-center">
