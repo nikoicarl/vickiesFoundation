@@ -50,6 +50,7 @@ $(document).ready(function () {
                 country: $('.country').val(),
                 gender: $('.gender').val(),
                 age: $('.age').val(),
+                team: $("input:checkbox[name='team']:checked").val(),
                 social_media: $('.social_media').val(),
                 occupation: $("input[name='occupation']:checked").val(),
                 job_title: $('.job_title').val(),
@@ -57,10 +58,6 @@ $(document).ready(function () {
                 reason: $('.reason').val(),
                 support: $('.support').val(),
                 question: $('.question').val(),
-                event: $("input:checkbox[name='event']:checked").val(),
-                fundraising: $("input:checkbox[name='fundraising']:checked").val(),
-                socialMedia: $("input:checkbox[name='socialMedia']:checked").val(),
-                volunteer: $("input:checkbox[name='volunteer']:checked").val(),
                 globalImageHolder: globalImageHolder
             });
         }, 500);
@@ -75,6 +72,7 @@ $(document).ready(function () {
                         </button>
                     </div>
                 `);
+                $('.vic_volunteer_form_submit_btn', this).html('Submit Form');
             } else {
                 $('.vic-alert').html(`
                 <div class=" alert alert-success alert-dismissible fade show col-12" role="alert"> ${data.message} 
@@ -85,7 +83,7 @@ $(document).ready(function () {
             `);
             globalImageHolder =[];
             $('.volunteer, .nameFirst, .nameLast, .email, .phone, .whatsapp, .addressl1, .state, .country, .gender, .age, .social_media, .job_title, .job_desc, .reason, .support, .question').val('');
-            $('.occupation, .event, .fundraising, .socialMedia, .volunteer').prop('checked', false);
+            $('.occupation, .team').prop('checked', false);
             $('.vic_volunteer_form_submit_btn').html('Submit Form <span class="mbrib-chat mbr-iconfont mbr-iconfont-btn"></span>');
             }
         });
