@@ -1,6 +1,5 @@
 const express = require('express');
 const start = express();
-const partials = require('express-partial');
 const md5 = require('md5');
 const socket = require('socket.io');
 const path = require('path');
@@ -33,7 +32,6 @@ const homeRouter = require('./model/routers/homeRouter');
 
 
 //set template engine
-start.use(partials());
 start.set('view engine', 'ejs');
 
 //set static files folder
