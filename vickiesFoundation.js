@@ -1,6 +1,7 @@
 const express = require('express');
 const start = express();
 const md5 = require('md5');
+const partials = require('express-partials');
 const socket = require('socket.io');
 const path = require('path');
 
@@ -12,7 +13,7 @@ const homeRouter = require('./model/routers/homeRouter');
 
 
 //================= INSERT / UPDATE IMPORT FILES =======================//
-    
+const volunteerFormSubmit = require('./model/controllers/volunteerFormSubmit');
 //======================================================================//
 
 
@@ -32,6 +33,7 @@ const homeRouter = require('./model/routers/homeRouter');
 
 
 //set template engine
+start.use(partials());
 start.set('view engine', 'ejs');
 
 //set static files folder
@@ -48,6 +50,7 @@ start.use('/js', express.static('./node_modules/jquery/dist'));
 //use backend here
 //================= INNITIAL REQUIRED FILES =======================//
     homeRouter(start);
+
 //=================================================================//
 
 
@@ -68,7 +71,8 @@ socketIo.on('connection', function(socketConnection) {
 
 
     //================= INSERT / UPDATE CONTROLLERS ==============//
-        
+    volunteerFormSubmit(socketConnection);
+
     //============================================================//
 
 

@@ -1,9 +1,9 @@
-<form method="POST" class="vf_form" id="vf_form" action="vf_form.php">
+<form method="POST" class="vic_volunteer_form_submit"  action="#">
     <div class="row  container form_css">
         <div class="col-md-6">
             <div class="form-group mt-2">
                 <label for="fname">First Name <span style="color:red;">*</span></label>
-                <input type="text" required class="form-control" name="nameFirst" id="nameFirst"
+                <input type="text"  class="form-control nameFirst"  id="nameFirst"
                     aria-describedby="helpId" placeholder="">
             </div>
 
@@ -11,7 +11,7 @@
         <div class="col-md-6">
             <div class="form-group mt-2">
                 <label for="">Last Name <span style="color:red;">*</span></label>
-                <input type="text" required class="form-control" name="nameLast" id="nameLast" aria-describedby="helpId"
+                <input type="text"  class="form-control nameLast"  id="nameLast" aria-describedby="helpId"
                     placeholder="">
 
             </div>
@@ -20,7 +20,7 @@
         <div class="col-md-12">
             <div class="form-group mt-2">
                 <label for="">Email <span style="color:red;">*</span></label>
-                <input type="email" required class="form-control" name="email" id="email" aria-describedby="helpId"
+                <input type="email"  class="form-control email"  id="email" aria-describedby="helpId"
                     placeholder="">
 
             </div>
@@ -29,7 +29,7 @@
         <div class="col-md-6">
             <div class="form-group mt-2">
                 <label for="fname">Phone <span style="color:red;">*</span></label>
-                <input type="text" required class="form-control" name="phone" id="phone" aria-describedby="helpId"
+                <input type="text"  class="form-control phone"  id="phone" aria-describedby="helpId"
                     placeholder="">
             </div>
 
@@ -37,7 +37,7 @@
         <div class="col-md-6">
             <div class="form-group mt-2">
                 <label for="">Whatsapp number</label>
-                <input type="text" class="form-control" name="whatsapp" id="whatsapp" aria-describedby="helpId"
+                <input type="text" class="form-control whatsapp"  id="whatsapp" aria-describedby="helpId"
                     placeholder="">
 
             </div>
@@ -46,14 +46,14 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="">Address Line 1 <span style="color:red;">*</span></label>
-                <input type="text" class="form-control" name="addressl1" id="addressl1" aria-describedby="helpId"
+                <input type="text" class="form-control addressl1"  id="addressl1" aria-describedby="helpId"
                     placeholder="">
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <label for="">State <span style="color:red;">*</span></label>
-                <input type="text" class="form-control" name="state" id="state" aria-describedby="helpId"
+                <input type="text" class="form-control state"  id="state" aria-describedby="helpId"
                     placeholder="">
             </div>
         </div>
@@ -61,7 +61,7 @@
         <div class="col-md-12">
             <div class="form-group">
                 <label for="">Country <span style="color:red;">*</span></label>
-                <input type="text" class="form-control" name="country" id="country" aria-describedby="helpId"
+                <input type="text" class="form-control country"  id="country" aria-describedby="helpId"
                     placeholder="">
             </div>
         </div>
@@ -69,7 +69,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="">Gender <span style="color:red;">*</span> </label>
-                <select class="form-control" required name="gender" id="">
+                <select class="form-control gender"   >
                     <option selected>Select</option>
                     <option name="gender" value="Male">Male</option>
                     <option name="gender" value="Female">Female</option>
@@ -80,7 +80,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="">Age <span style="color:red;">*</span></label>
-                <select class="form-control" required name="age" id="">
+                <select class="form-control age"   >
                     <option name="age" selected>Select</option>
                     <option name="age" value="18-25">18-25</option>
                     <option name="age" vlaue="26-30">26-30</option>
@@ -93,21 +93,21 @@
             <label for=""> Which team would you like to join?</label>
             <div class="form-check mb-2 ">
                 <label class="form-check-label d-block">
-                    <input class="form-check-input" type="radio" name="team" id="" value="Events Organisers"> Event
+                    <input class="form-check-input event" type="checkbox" name="event"  value="Events Organisers"> Event
                     Organisers
                 </label>
                 <label class="form-check-label d-block">
-                    <input class="form-check-input" type="radio" name="team" id="" value="Fundraising and Sponsorship">
+                    <input class="form-check-input fundraising" type="checkbox" name="fundraising"  value="Fundraising and Sponsorship">
                     Fundraising and Sponsorship
                 </label>
                 <label class="form-check-label d-block">
-                    <input class="form-check-input" type="radio" name="team" id=""
+                    <input class="form-check-input socialMedia" type="checkbox" name="socialMedia" 
                         value="Social Media (Including Photography and Graphic Design)"> Social Media (Including
                     Photography and Graphic Design)
                 </label>
                 <label class="form-check-label d-block">
-                    <input class="form-check-input" type="radio" name="team" id="" value="None - Volunteer Only"> None -
-                    Volunteer Only
+                    <input class="form-check-input volunteer" type="checkbox" name="volunteer"  value="None - Volunteer Only"> None -
+                    Volunteer Only 
                 </label>
             </div>
         </div>
@@ -115,7 +115,7 @@
             <div class="form-group ">
                 <label for="fname">Please provide one of your active social media accounts (Facebook, Twitter,
                     Instagram, LinkedIn) and indicate which <span style="color:red;">*</span></label>
-                <input type="text" class="form-control" required name="social_media" id="social_media"
+                <input type="text" class="form-control social_media"   id="social_media"
                     aria-describedby="helpId" placeholder="">
             </div>
         </div>
@@ -125,10 +125,10 @@
                 <label for="fname">Occupation <span style="color:red;">*</span></label>
                 <div class="form-check mb-2 ">
                     <label class="form-check-label d-block">
-                        <input class="form-check-input" type="radio" name="occupation" id="" value="student">Student
+                        <input class="form-check-input occupation" type="radio" name="occupation"  value="student">Student
                     </label>
                     <label class="form-check-label d-block">
-                        <input class="form-check-input" type="radio" name="occupation" id="" value="working"> Working
+                        <input class="form-check-input occupation" type="radio" name="occupation"  value="working"> Working
                     </label>
 
 
@@ -140,7 +140,7 @@
         <div class="col-md-6">
             <div class="form-group mt-2">
                 <label for="">Institution || Occupation<span style="color:red;"> *</span></label>
-                <input type="text" class="form-control" required name="job_title" id="job_title"
+                <input type="text" class="form-control job_title"   id="job_title"
                     aria-describedby="helpId" placeholder="">
 
             </div>
@@ -148,7 +148,7 @@
         <div class="col-md-6">
             <div class="form-group mt-2">
                 <label for="">Course || Job Description<span style="color:red;"> *</span></label>
-                <input type="text" class="form-control" required name="job_desc" id="job_desc" aria-describedby="helpId"
+                <input type="text" class="form-control job_desc"   id="job_desc" aria-describedby="helpId"
                     placeholder="">
 
             </div>
@@ -157,21 +157,21 @@
             <div class="form-group ">
                 <label for="fname">Reason(s) for Volunteering with Vickies Foundation <span
                         style="color:red;">*</span></label>
-                <textarea class="form-control" required name="reason" id="reason" rows="3"></textarea>
+                <textarea class="form-control reason"  name="reason"  rows="3"></textarea>
             </div>
 
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <label for="">How can you support the Foundation in achieving its plan?</label>
-                <textarea class="form-control" name="support" id="support" rows="3"></textarea>
+                <textarea class="form-control support" name="support"  rows="3"></textarea>
             </div>
         </div>
 
         <div class="col-md-12">
             <div class="form-group">
                 <label for="">Any question(s) or suggestion(s)?</label>
-                <textarea class="form-control" name="question" id="question" rows="3"></textarea>
+                <textarea class="form-control question" name="question"  rows="3"></textarea>
             </div>
         </div>
 
@@ -179,11 +179,15 @@
             <label for='uploadfile'>Upload Image:</label>
             <input type="file" name="uploadfile" id="uploadfile">
         </div>
+
         <div class="col-md-12 text-center">
             <div class="mt-3 mb-3">
-                <button type="submit" class="btn-sm bg-white text-dark" name="vf_submit_btn" id="vf_submit_btn">Submit
+                <button type="submit" class="btn-lg  btn-light btn vic_volunteer_form_submit_btn" >Submit Form
                 </button>
             </div>
+        </div>
+        <div class="col-md-12">
+            <div class="vic-alert"></div>
         </div>
 
 
